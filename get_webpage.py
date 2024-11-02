@@ -10,5 +10,6 @@ def handle_request():
       url=url,
       headers={'User-Agent': 'Mozilla/5.0'}
   )
+  print("Fetched URL:", url)
   webpage = urlopen(req).read()
   return webpage
