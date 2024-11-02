@@ -119,4 +119,4 @@ def handle_request():
     
         channel_list.append(channels)
     
-    return json.dumps([saved_times, saved_links, saved_matches])
+    return json.dumps([saved_times, saved_matches, channel_list])
