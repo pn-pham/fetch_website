@@ -53,6 +53,7 @@ def handle_request():
     time_offset = request.args.get('time_offset') if request.method == 'GET' else request.form.get('time_offset')
 
     print("today", today, type(today))
+    print("time_offset", time_offset, type(time_offset))
     print(livesoccertv_url + 'schedules/' + today)
     content = fetch_url(livesoccertv_url + 'schedules/' + today)
 
