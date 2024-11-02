@@ -40,11 +40,8 @@ def fetch_url(url):
 
 def convert_time(time_str, time_offset):
     print("time_str", time_str, time_offset)
-    if time_str[-1] == 'm':
-        time_str = time_str[:-2] + ' ' + time_str[-2:]
-
     print("1/1/2000 " + time_str)
-    date_time = datetime.strptime("1/1/2000 " + time_str, "%d/%m/%Y %H:%M %p")
+    date_time = datetime.strptime("1/1/2000 " + time_str, "%d/%m/%Y %I:%M%p")
     adjusted_time = date_time + timedelta(hours=time_offset)
     return adjusted_time.strftime("%H:%M")
 
