@@ -26,7 +26,7 @@ leagues = [
 ]
 
 def fetch_url(url):
-    time.sleep(2) # sleeping for at least 2 seconds to prevent too many requests errors
+    time.sleep(3) # sleeping for at least 3 seconds to prevent too many requests errors
     print("Fetching URL:", url)
     try:
         response = Request(
