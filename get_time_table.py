@@ -51,7 +51,8 @@ app = Flask(__name__)
 def handle_request():
     today = request.args.get('today') if request.method == 'GET' else request.form.get('today')
     time_offset = request.args.get('time_offset') if request.method == 'GET' else request.form.get('time_offset')
-  
+
+    print(livesoccertv_url + 'schedules/' + today)
     content = fetch_url(livesoccertv_url + 'schedules/' + today)
 
     times = []
