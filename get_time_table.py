@@ -39,6 +39,7 @@ def fetch_url(url):
         return ""
 
 def convert_time(time_str, time_offset):
+    print("time_str", time_str, time_offset)
     if time_str[-1] == 'm':
         time_str = time_str[:-2] + ' ' + time_str[-2:]
     date_time = datetime.strptime("1/1/2000 " + time_str, "%d/%m/%Y %H:%M")
@@ -51,7 +52,7 @@ app = Flask(__name__)
 def handle_request():
     today = request.args.get('today') if request.method == 'GET' else request.form.get('today')
     time_offset = request.args.get('time_offset') if request.method == 'GET' else request.form.get('time_offset')
-
+    time_offset = int(float(time_offset))
     print("today", today, type(today))
     print("time_offset", time_offset, type(time_offset))
     print(livesoccertv_url + 'schedules/' + today)
