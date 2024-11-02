@@ -68,7 +68,7 @@ def handle_request():
         competition = content[x2 + 13:x3 - 1]
         x1 = content.find('class="sortable_comp"', x3)
         if (x1 < 0):
-        x1 = x_end
+            x1 = x_end
         
         if competition in leagues:
             x4 = content.find(time_code, x3 + 1)
